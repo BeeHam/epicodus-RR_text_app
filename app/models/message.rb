@@ -6,9 +6,9 @@ class Message < ActiveRecord::Base
   def send_message
     response = RestClient::Request.new(
       method: :post,
-      url: 'https://api.twilio.com/2010-04-01/Accounts/AC8a27199f3d65fbfb936b4eb4048ca0e5/Messages.json',
-      user: 'AC8a27199f3d65fbfb936b4eb4048ca0e5',
-      password: 'f7f151b39c25e2b6b412b4a0a6836617',
+      url: "https://api.twilio.com/2010-04-01/Accounts/#{ENV['TWILIO_ACCOUNT_SID']}/Messages.json",
+      user: ENV['TWILIO_ACCOUNT_SID'],
+      password: ENV['TWILIO_AUTH_TOKEN'],
       payload: { Body: body,
                  To: to,
                  From: from}
