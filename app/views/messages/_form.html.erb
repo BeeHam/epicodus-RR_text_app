@@ -1,9 +1,13 @@
-<%= form_for [@contact, @message] do |f| %>
-  <%= f.label :to %>
-  <%= f.text_field :to, value: @contact.phone_number %>
-  <%= f.label :from %>
-  <%= f.text_field :from, value: "15005550006" %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-  <%= f.submit "Send" %>
-<% end %>
+<div id="new_message">
+
+  <%= form_for [@contact, @message], remote: true do |f| %>
+    <%= f.label :to %>
+    <%= f.text_field :to, value: @contact.phone_number %>
+    <%= f.label :from %>
+    <%= f.text_field :from, value: "15005550006" %>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+    <%= f.submit "Send" %>
+  <% end %>
+
+</div>

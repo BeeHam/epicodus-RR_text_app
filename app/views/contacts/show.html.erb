@@ -4,5 +4,5 @@
 <li><%= @contact.name %> - <%= @contact.phone_number %></li>
 </ul>
 <hr>
-<%= link_to "Send a message", new_contact_message_path(@contact) %> | 
+<%= link_to "Send a message", new_contact_message_path(@contact), id: "new_message_link", remote: true %> | 
 <%= link_to "Home", root_path %>

@@ -18,11 +18,15 @@ class MessagesController < ApplicationController
     @message = @contact.messages.new(message_params)
     if @message.save
       flash[:notice] = "Your message was sent"
-      redirect_to contact_path(@contact)
+      respond_to do |format|
+        format.html {redirect_to contact_path(@contact)}
+        format.js
+      end
     else
       render :new
     end
   end
+
 
 
 
