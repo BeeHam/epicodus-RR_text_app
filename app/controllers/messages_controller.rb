@@ -1,24 +1,26 @@
 class MessagesController < ApplicationController
 
-  def index
-    @messages = Message.all
-  end
+  # def index
+  #   @messages = Message.all
+  # end
+  #
+  # def show
+  #   @message  = Message.find(params[:id])
+  # end
 
-  def show
-    @message  = Message.find(params[:id])
-  end
-  
   def new
+    @contact = Contact.find(params[:contact_id])
     @message = Message.new
   end
 
   def create
-    @message = Message.new(message_params)
+    @contact = Contact.find(params[:contact_id])
+    @message = @contact.messages.new(message_params)
     if @message.save
       flash[:notice] = "Your message was sent"
-      redirect_to messages_path
+      redirect_to contact_path(@contact)
     else
-      render 'new'
+      render :new
     end
   end
 

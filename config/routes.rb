@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  root "messages#index"
+  root "contacts#index"
 
-  resources :messages
 
-  resources :contacts
+  resources :contacts do
+    resources :messages, only: [:new]
+  end
 
 end
