@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
   resources :contacts do
-    resources :messages, only: [:new]
+    resources :messages, only: [:new, :create]
   end
 
 end

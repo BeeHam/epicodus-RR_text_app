@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
 
   def new
     @contact = Contact.find(params[:contact_id])
-    @message = Message.new
+    @message = @contact.messages.new
   end
 
   def create
