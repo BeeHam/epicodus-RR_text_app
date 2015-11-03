@@ -1,4 +1,7 @@
 class Message < ActiveRecord::Base
+
+  has_many_and_belongs_to :contacts
+
   validates :to, presence: true
   validates :from, presence: true
   validates :body, presence: true
