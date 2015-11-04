@@ -16,3 +16,101 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@font-face {
+      font-family: "Data Control";
+      src: url("data-latin.ttf");
+}
+
+
+body {
+  font: 250% "Data Control";
+  color: #1AFF1A;
+  background-color: black;
+}
+
+li {
+  list-style: none;
+  padding: 0.5em;
+}
+
+a {
+  color: #1AFF1A;
+}
+
+.edit-delete {
+  border:  2px solid #1AFF1A;
+}
+
+
+.button {
+  background-color: black;
+  border-color: #1AFF1A;
+  outline:0px !important;
+  -webkit-appearance: none;
+}
+
+input[type="text"], textarea {
+  background-color : black;
+  border-color:#1AFF1A;
+  outline:0px !important;
+  -webkit-appearance: none;
+}
+
+a:focus, a:hover {
+  background-color: #1AFF1A;
+  color: black;
+  border: #1AFF1A;
+  outline:0px !important;
+  -webkit-appearance: none;
+}
+
+hr {
+  border: 0;
+  border-bottom: 3px dashed #1AFF1A;
+}
+
+#contacts-header {
+  font-size: 5em;
+  text-align: center;
+  padding: 3rem 10rem;
+  border: 2px dashed #1AFF1A;
+  margin-bottom: 0.5em;
+}
+
+
+#menu {
+  text-align: right;
+  margin-bottom: 2em;
+}
+
+#scroll {
+  width: 50%;
+  margin: 1em auto;
+}
+
+// --------------------------------
+//
+// p{
+//   font-size: 14px;
+//   margin: 30px;
+//   white-space:nowrap;
+//   overflow: hidden;
+//   width: 30em;
+//   animation: type 5s steps(50, end) 1;
+// }
+//
+// /* let's animate, it's super easy */
+// @keyframes type{
+//   from{ width: 0;}
+// }
+// /*looks like something is wrong, Fixed!!! */
+//
+// /*let's make it more realistic, so I added span tag, let's animate span*/
+// span{
+//   animation: blink 1s infinite;
+// }
+//
+// @keyframes blink{
+//   to{ opacity: .0;}
+// }
